@@ -1,0 +1,20 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+  <h1>My Notes</h1>
+    <div class="notes">
+      {% for note in notes %}
+        <div class="note">
+          <a href="{% url 'notes:detail' slug=note.slug %}">
+            <h2>{{ note.title }}</h2>
+            <p>{{note.snippet}}</p>
+            <p>{{note.date}}</p>
+            <p class="author">added by {{note.author.username}}</p>
+          </a>
+        </div>
+      {% empty %}
+      <p style="text-align:center"><h2>Your created notes will be stored here!</h2></p>
+
+      {% endfor %}
+    </div>
+{% endblock %}

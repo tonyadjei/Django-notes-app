@@ -1,0 +1,15 @@
+{% extends 'base_layout.html' %}
+
+
+{% block content %}
+
+<div class="note-detail">
+  <div class="note">
+    <img src="{{ note.thumb.url }}" alt="A picture representing what the note talks about">
+    <h2>{{ note.title }}</h2>
+    <p>{{ note.body }}</p>
+    <p>{{ note.date }}</p>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base_layout.html' %}
+
+
+{% block content %}
+  <div class="create-note">
+    <h2>Create an Awesome New Note</h2>
+    <form class="site-form" action="{% url 'notes:create' %}" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form }}
+      <input type="submit" name="" value="Create">
+    </form>
+  </div>
+  <script src="/static/slugify.js"></script>
+{% endblock %}
